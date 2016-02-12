@@ -1,0 +1,2 @@
+﻿  main.cpp
+c:\users\bobert\documents\visual studio 2015\projects\dndskillgetter\dndskillgetter\main.cpp(6): fatal error C1083: Cannot open include file: 'curl.h': No such file or directory

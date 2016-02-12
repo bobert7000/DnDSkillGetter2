@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Fear :: d20srd.org</title>
+	<link href="/styles/spells.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="/scripts/diceRoller.js"></script>
+	<script type="text/javascript" src="/scripts/scrollingLinks.js"></script>
+	<script type="text/javascript" src="/scripts/menus.js"></script>
+	<script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21940748-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body onload="setupPage()">
+
+<div id="dc15search"><a href="/cgi-bin/black.cgi">&nbsp;</a></div>
+<div id="header">
+	<div id="siteLogo"><a href="/index.htm"><img src="/images/srdLogo.png" alt="The Hypertext d20 SRD - the ultimate d20 system reference" width="221" height="50" /></a></div>
+  <div id="siteSearch">
+    <script>
+      (function() {
+        var cx = '017876066608833108912:gg5d1fu6rlg';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:searchbox-only></gcse:searchbox-only>
+  </div>
+	<div id="path"><a href="/index.htm">Home</a> &gt; <a href="/indexes/spells.htm">Spells</a> &gt; <a href="#">Fear</a></div>
+	<ul id="rollovermenu">
+		<li id="hd20srdMenu"><a href="/index.htm" style="padding-right:5px"><img src="/images/menu_hd20srd.png" alt="Hypertext d20 SRD menu icon" width="23" height="20" /></a>
+			<ul>
+				<li><a href="/about.htm">About This Site</a></li>
+				<li><a href="/faq.htm">Frequently Asked Questions</a></li>
+				<li><a href="/changes.htm">Changes from the Official d20 SRD</a></li>
+				<li><a href="/ogl.htm">Open Game License</a></li>
+				<li><a href="/browserGoodies/">Browser Goodies</a></li>
+				<li><a href="/download.htm">Download The Site</a></li>
+			</ul>
+		</li>
+		<li id="ppnpMenu"><a href="http://www.PenPaperPixel.org/" style="padding:0 5px 0 5px" title="Pen, Paper, &amp; Pixel"><img src="/images/menu_ppnp.png" alt="Pen, Paper, &amp; Pixel menu icon" width="23" height="20" /></a>
+			<ul>
+				<li><a href="/extras/d20dicebag">d20 Dice Bag</a></li>
+				<li><a href="/extras/d20encountercalculator">d20 Encounter Calculator</a></li>
+				<li><a href="/extras/d20monsterfilter">d20 Monster Filter</a></li>
+				<li><a href="/extras/d20spellfilter">d20 Spell Filter</a></li>
+			</ul>
+		</li>
+		<li id="d20SystemMenu"><a style="padding-left:5px" href="http://www.wizards.com/default.asp?x=d20"><img src="/images/menu_d20.gif" alt="d20 System menu icon" width="23" height="20" /></a>
+			<ul>
+				<li><a href="http://www.wizards.com/default.asp?x=d20">d20 System Info</a></li>
+				<li><a href="http://www.wizards.com/default.asp?x=d20/article/srd35">Official SRD</a></li>
+				<li><a href="http://www.wizards.com/default.asp?x=d20/article/msrd">d20 Modern SRD</a></li>
+				<li><a href="http://www.wizards.com/default.asp?x=d20/srdfaq/20040123c">SRD FAQ</a></li>
+				<li><a href="http://www.opengamingfoundation.org/">Open Gaming Foundation</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<h1>Fear</h1>
+<h4><a href="/srd/magicOverview/spellDescriptions.htm#necromancy">Necromancy</a> [<a href="/srd/magicOverview/spellDescriptions.htm#descriptor">Fear, Mind-Affecting</a>]</h4>
+<table class="statBlock" cellspacing="0">
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#level">Level</a>:</th>
+		<td><a href="/srd/spellLists/bardSpells.htm#thirdLevelBardSpells">Brd 3</a>, <a href="/srd/spellLists/sorcererWizardSpells.htm#fourthLevelSorcererWizardSpells">Sor/Wiz 4</a></td>
+	</tr>
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#components">Components</a>:</th>
+		<td>V, S, M</td>
+	</tr>
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#castingTime">Casting Time</a>:</th>
+		<td>1 <a href="/srd/combat/actionsInCombat.htm#standardActions">standard action</a></td>
+	</tr>
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#range">Range</a>:</th>
+		<td>30 ft.</td>
+	</tr>
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#area">Area</a>:</th>
+		<td>Cone-shaped burst</td>
+	</tr>
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#duration">Duration</a>:</th>
+		<td>1 round/level or 1 round; see text</td>
+	</tr>
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#savingThrow">Saving Throw</a>:</th>
+		<td>Will partial</td>
+	</tr>
+	<tr>
+		<th><a href="/srd/magicOverview/spellDescriptions.htm#spellResistance">Spell Resistance</a>:</th>
+		<td>Yes</td>
+	</tr>
+</table>
+<p>
+	An invisible cone of terror causes each living creature in the area to become <a href="/srd/conditionSummary.htm#panicked">panicked</a> unless it succeeds on a <a href="/srd/combat/combatStatistics.htm#will">Will save</a>. If cornered, a panicked creature begins <a href="/srd/conditionSummary.htm#cowering">cowering</a>. If the Will save succeeds, the creature is <a href="/srd/conditionSummary.htm#shaken">shaken</a> for 1 round.
+</p>
+
+<h6>Material Component</h6>
+<p>
+	Either the heart of a hen or a white feather.
+</p>
+
+<div class="footer">
+	<p>
+		The Hypertext d20 SRD<sup>TM</sup> is owned and created by <a href="mailto:&#74;&#97;&#110;&#115;&#64;&#100;&#50;&#48;&#115;&#114;&#100;&#46;&#111;&#114;&#103;">Jans Carton</a>.
+	</p>
+	<p class="legal">
+		The text on this page is Open Game Content, and is licensed for public use under the terms of the <a href="/ogl.htm">Open Game License v1.0a</a>.
+	</p>
+	<p class="legal">
+		‘d20 System’ and the ‘d20 System’ logo are trademarks of Wizards of the Coast, Inc.<br />and are used according to the terms of the d20 System License version 6.0.<br />A copy of this License can be found at <a href="http://www.wizards.com/d20">www.wizards.com/d20</a>.
+	</p>
+	<ul id="standards">
+		<li><a href="http://www.section508.gov" title="This site conforms to the US Government Section 508 Accessibility Guidelines.">Section 508</a></li>
+		<li><a href="http://www.w3.org/WAI/WCAG1AAA-Conformance" title="This site conforms to the W3C-WAI Web Content Accessibility Guidelines.">WAI-AAA</a></li>
+		<li><a href="http://validator.w3.org/check/referer" title="This site is valid XHTML.">Valid XHTML</a></li>
+		<li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="This site was built with valid CSS and semantically correct use of tables.">Valid CSS</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

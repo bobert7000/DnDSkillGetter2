@@ -1,0 +1,4 @@
+﻿  fileSearch.cpp
+fileSearch.cpp(27): error C3861: 'organizeVector': identifier not found
+fileSearch.cpp(47): error C3861: 'partitionVector': identifier not found
+fileSearch.cpp(67): error C2660: 'std::swap': function does not take 3 arguments

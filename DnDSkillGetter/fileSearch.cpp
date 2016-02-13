@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <map>
 using namespace std;
 
 #include "fileSearch.h"
@@ -12,10 +13,12 @@ fileSearch::fileSearch()
 
 }
 
-fileSearch::fileSearch(char* fileName,vector<char*> skillInfo)
+void organizeVector(vector<char*> myVector, int start, int end);
+
+fileSearch::fileSearch(char* fileName,map<char*, string> skillInfo)
 {
 	fstream file;
-	char* buffer;
+	char* buffer = "";
 	//Open the file
 	file.open(fileName);
 	//Load the vector
@@ -24,33 +27,27 @@ fileSearch::fileSearch(char* fileName,vector<char*> skillInfo)
 		htmlSource.push_back(buffer);
 	}
 	//Organize it
-	organizeVector(htmlSource);
+	//organizeVector(htmlSource,0,htmlSource.size() - 1);
 	//Find important and load it into the handed vector
-	skillInfo.push_back(getName());
-	skillInfo.push_back(getClass());
-	skillInfo.push_back(getComponents());
-	skillInfo.push_back(getCT());
-	skillInfo.push_back(getRange());
-	skillInfo.push_back(getArea());
-	skillInfo.push_back(getDuration());
-	skillInfo.push_back(getSaving());
-	skillInfo.push_back(getResist());
+	skillInfo["Name"] = getName(fileName);
+	skillInfo["Class"] = getClass();
+	skillInfo["Components"] = getComponents();
+	skillInfo["Cast Time"] = getCT();
+	skillInfo["Range"] = getRange();
+	skillInfo["Area"] = getArea();
+	skillInfo["Duration"] = getDuration();
+	skillInfo["Saving Throw"] = getSaving();
+	skillInfo["Resistance"] = getResist();
 }
 
-//sort vector of html cod using quicksort
-void organizeVector(vector<char*> myVector,int start, int end)
+/*//Swap function for vector
+void swap(vector<char*> myVector, int i, int j)
 {
-	int i = start;
-	int j = end;
-	int pivot = (i + j) / 2;
-
-	partitionVector(myVector, i, j, pivot);
-	
-	//recursion
-	if (start < j)
-		organizeVector(myVector, start, j);
-	if (i < end)
-		organizeVector(myVector, start, j);
+	char* temp;
+	temp = myVector[i];
+	myVector[i] = myVector[j];
+	myVector[j] = temp;
+	return;
 }
 
 //partition vector for quicksort
@@ -71,63 +68,121 @@ void partitionVector(vector<char*> myVector, int i, int j, int pivot)
 	}
 }
 
-//Swap function for vector
-void swap(vector<char*> myVector, int i, int j)
+//sort vector of html cod using quicksort
+void organizeVector(vector<char*> myVector,int start, int end)
 {
-	char* temp;
-	temp = myVector[i];
-	myVector[i] = myVector[j];
-	myVector[j] = temp;
-	return;
+	int i = start;
+	int j = end;
+	int pivot = (i + j) / 2;
+
+	partitionVector(myVector, i, j, pivot);
+	
+	//recursion
+	if (start < j)
+		organizeVector(myVector, start, j);
+	if (i < end)
+		organizeVector(myVector, start, j);
+}*/
+
+int fileSearch::searchVector(char* token, int pos)
+{
+	while (pos < htmlSource.size())
+	{
+		if (strstr(htmlSource[pos], token))
+			return pos;
+	}
+
+	return -1; //return a non index value if nothing turns up
 }
 
-void searchVector(vector<char*>  myVector, char* token)
+string fileSearch::cleanLine(int pos)
 {
+	char* tmp;
+	string myString;
+	int start = 0;
+	tmp = htmlSource[pos];
 
+	for (int i = 0; tmp[i] != NULL; i++)
+	{
+		if (tmp[i] == '>')
+		{
+			while (tmp[i] != '<')
+				myString = myString + tmp[i];
+		}
+	}
+
+	return myString;
 }
 
-char* fileSearch::getName()
+string fileSearch::getName(char* skillName)
 {
-
+	int pos;
+	pos = searchVector(skillName, specialHTMLNumber);
+	return cleanLine(pos);
 }
 
-char* fileSearch::getClass()
+string fileSearch::getClass()
 {
-
+	int pos;
+	pos = searchVector("Class", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
-char* fileSearch::getComponents()
+string fileSearch::getComponents()
 {
+	int pos;
+	pos = searchVector("Components", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
-char* fileSearch::getCT()
+string fileSearch::getCT()
 {
-
+	int pos;
+	pos = searchVector("Cast Time", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
-char* fileSearch::getRange()
+string fileSearch::getRange()
 {
-
+	int pos;
+	pos = searchVector("Range", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
-char* fileSearch::getArea()
+string fileSearch::getArea()
 {
-
+	int pos;
+	pos = searchVector("Area", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
-char* fileSearch::getDuration()
+string fileSearch::getDuration()
 {
-
+	int pos;
+	pos = searchVector("Duration", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
-char* fileSearch::getSaving()
+string fileSearch::getSaving()
 {
-
+	int pos;
+	pos = searchVector("Class", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
-char* fileSearch::getResist() 
+string fileSearch::getResist() 
 {
-
+	int pos;
+	pos = searchVector("Spell Resistance", specialHTMLNumber);
+	pos++; //add 1 for this blocks info
+	return cleanLine(pos);
 }
 
 fileSearch::~fileSearch()

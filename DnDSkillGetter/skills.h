@@ -11,7 +11,7 @@ class skills
 public:
 	//Constructors
 	skills(); //default
-	skills(char *skillHTML); //HTML source code of skill
+	skills(char *skillName); //HTML source code of skill
 
 	//Class functions 
 	string findString(char *myChar); //NOTE: consider change/reclass for this function
@@ -31,6 +31,6 @@ public:
 // protected means 'private' when accessing the protected memebers outside the base class
 // or outside of the derived classes
 protected:
-	vector<char *> skillInfo;
+	map<char *,string> skillInfo;
 	const int maxLine = 1024;
 };

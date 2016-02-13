@@ -1,2 +1,13 @@
-﻿  main.cpp
-c:\users\bobert\documents\visual studio 2015\projects\dndskillgetter\dndskillgetter\main.cpp(6): fatal error C1083: Cannot open include file: 'curl.h': No such file or directory
+﻿Build started 2/13/2016 2:46:16 AM.
+     1>Project "C:\Users\bobert\Documents\Projects\DnDSkillGetter2\DnDSkillGetter\DnDSkillGetter.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         F:\Programming\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\Debug\DnDSkillGetter.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\Programming\Libcurl\builds\libcurl-vc12-x86-release-static-ipv6-sspi-winssl\lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libcurl_a.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\Debug\DnDSkillGetter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\Debug\DnDSkillGetter.lib" /MACHINE:X86 Debug\fileSearch.obj
+         Debug\main.obj
+         Debug\skills.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         DnDSkillGetter.vcxproj -> C:\Users\bobert\Documents\Projects\DnDSkillGetter2\Debug\DnDSkillGetter.exe
+     1>Done Building Project "C:\Users\bobert\Documents\Projects\DnDSkillGetter2\DnDSkillGetter\DnDSkillGetter.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.31

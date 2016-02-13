@@ -53,9 +53,12 @@ void htmlGrab(string myURL)
 
 void main()
 {
-	string myURL;
-	cout << "url?: ";
-	cin >> myURL;
+	string myURL = "http://www.d20srd.org/srd/spells/";
+	string skillName;
+	cout << "Skill Name: ";
+	cin >> skillName;
+	myURL = myURL + skillName + ".htm";
+
 	htmlGrab(myURL);
 
 	system("pause");

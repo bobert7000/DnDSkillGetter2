@@ -1,0 +1,17 @@
+﻿Build started 2/13/2016 2:11:20 AM.
+     1>Project "C:\Users\bobert\Documents\Projects\DnDSkillGetter2\DnDSkillGetter\DnDSkillGetter.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         F:\Programming\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Debug\DnDSkillGetter.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:/Programming/Libcurl/builds/libcurl-vc12-x86-release-static-ipv6-sspi-winssl/lib/" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libcurl_a.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Debug\DnDSkillGetter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Debug\DnDSkillGetter.lib" /MACHINE:X64 x64\Debug\fileSearch.obj
+         x64\Debug\main.obj
+         x64\Debug\skills.obj
+     1>main.obj : error LNK2019: unresolved external symbol curl_global_init referenced in function "void __cdecl htmlGrab(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?htmlGrab@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+     1>main.obj : error LNK2019: unresolved external symbol curl_easy_init referenced in function "void __cdecl htmlGrab(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?htmlGrab@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+     1>main.obj : error LNK2019: unresolved external symbol curl_easy_setopt referenced in function "void __cdecl htmlGrab(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?htmlGrab@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+     1>main.obj : error LNK2019: unresolved external symbol curl_easy_perform referenced in function "void __cdecl htmlGrab(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?htmlGrab@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+     1>main.obj : error LNK2019: unresolved external symbol curl_easy_cleanup referenced in function "void __cdecl htmlGrab(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?htmlGrab@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+     1>C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Debug\DnDSkillGetter.exe : fatal error LNK1120: 5 unresolved externals
+     1>Done Building Project "C:\Users\bobert\Documents\Projects\DnDSkillGetter2\DnDSkillGetter\DnDSkillGetter.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.09

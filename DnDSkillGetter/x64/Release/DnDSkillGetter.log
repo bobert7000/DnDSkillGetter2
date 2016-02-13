@@ -1,0 +1,22 @@
+﻿Build started 2/13/2016 2:24:28 AM.
+     1>Project "C:\Users\bobert\Documents\Projects\DnDSkillGetter2\DnDSkillGetter\DnDSkillGetter.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         F:\Programming\VC\bin\x86_amd64\CL.exe /c /I"F:\Programming\Libcurl\builds\libcurl-vc12-x86-release-static-ipv6-sspi-winssl\include\curl" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D _MBCS /D _MBCS /D CURL_STATICLIB /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt fileSearch.cpp main.cpp skills.cpp
+         fileSearch.cpp
+         main.cpp
+         skills.cpp
+       Link:
+         F:\Programming\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Release\DnDSkillGetter.exe" /NOLOGO /LIBPATH:"F:/Programming/Libcurl/builds/libcurl-vc12-x86-release-static-ipv6-sspi-winssl/lib/" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libcurl_a.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Release\DnDSkillGetter.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Release\DnDSkillGetter.lib" /MACHINE:X64 x64\Release\fileSearch.obj
+         x64\Release\main.obj
+         x64\Release\skills.obj
+     1>main.obj : error LNK2001: unresolved external symbol curl_easy_setopt
+     1>main.obj : error LNK2001: unresolved external symbol curl_easy_perform
+     1>main.obj : error LNK2001: unresolved external symbol curl_easy_cleanup
+     1>main.obj : error LNK2001: unresolved external symbol curl_global_init
+     1>main.obj : error LNK2001: unresolved external symbol curl_easy_init
+     1>C:\Users\bobert\Documents\Projects\DnDSkillGetter2\x64\Release\DnDSkillGetter.exe : fatal error LNK1120: 5 unresolved externals
+     1>Done Building Project "C:\Users\bobert\Documents\Projects\DnDSkillGetter2\DnDSkillGetter\DnDSkillGetter.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.95

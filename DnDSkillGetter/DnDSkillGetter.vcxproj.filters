@@ -24,12 +24,18 @@
     <ClCompile Include="fileSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="macroMaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="skills.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fileSearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="macroMaker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -13,23 +13,25 @@ fileSearch::fileSearch()
 
 }
 
-void organizeVector(vector<char*> myVector, int start, int end);
+//void organizeVector(vector<char*> myVector, int start, int end);
 
-fileSearch::fileSearch(char* fileName,map<char*, string> skillInfo)
+fileSearch::fileSearch(char* fileName,map<char*, string>& skillInfo)
 {
 	fstream file;
-	char* buffer = "";
+	string buffer;
 	//Open the file
-	file.open(fileName);
+	file.open("myFile.txt");
 	//Load the vector
-	while (file.getline(buffer, maxLine))
+	while (getline(file,buffer))
 	{
 		htmlSource.push_back(buffer);
 	}
+
+	file.close();
 	//Organize it
 	//organizeVector(htmlSource,0,htmlSource.size() - 1);
 	//Find important and load it into the handed vector
-	skillInfo["Name"] = getName(fileName);
+	skillInfo["SkillName"] = getName(fileName);
 	skillInfo["Class"] = getClass();
 	skillInfo["Components"] = getComponents();
 	skillInfo["Cast Time"] = getCT();
@@ -38,6 +40,7 @@ fileSearch::fileSearch(char* fileName,map<char*, string> skillInfo)
 	skillInfo["Duration"] = getDuration();
 	skillInfo["Saving Throw"] = getSaving();
 	skillInfo["Resistance"] = getResist();
+	skillInfo["Description"] = getDescrip();
 }
 
 /*//Swap function for vector
@@ -86,28 +89,53 @@ void organizeVector(vector<char*> myVector,int start, int end)
 
 int fileSearch::searchVector(char* token, int pos)
 {
+	string buffer= "test";
+	string test = token;
+	size_t punk = 0;
+	for (int i = 0; i < test.size(); i++)
+		test[i] = towlower(test[i]);
+
 	while (pos < htmlSource.size())
 	{
-		if (strstr(htmlSource[pos], token))
+		buffer.replace(0,buffer.size(), htmlSource[pos]);
+
+		//Case Sensetivity is a bitch
+		for (int i = 0; i < buffer.size(); i++)
+			buffer[i] = towlower(buffer[i]);
+
+		punk = buffer.find(test);
+
+		if (punk != string::npos) //seaerch str for subset string
 			return pos;
+		pos++;
 	}
 
-	return -1; //return a non index value if nothing turns up
+	return pos; //return a non index value if nothing turns up
 }
 
 string fileSearch::cleanLine(int pos)
 {
-	char* tmp;
 	string myString;
+	string buffer;
 	int start = 0;
-	tmp = htmlSource[pos];
 
-	for (int i = 0; tmp[i] != NULL; i++)
+	//If its a non index position return an empty string
+	if (pos == -1)
+		return myString = "";
+
+	buffer = htmlSource[pos];
+
+	for (int i = 0; buffer[i] != NULL; i++)
 	{
-		if (tmp[i] == '>')
-		{
-			while (tmp[i] != '<')
-				myString = myString + tmp[i];
+		if (buffer[i] == '>')
+		{ 
+			i++;
+			while (buffer[i] != '<' && i < buffer.size())
+			{
+				myString = myString + buffer[i];
+				i++;
+			}
+			i++;
 		}
 	}
 
@@ -124,15 +152,15 @@ string fileSearch::getName(char* skillName)
 string fileSearch::getClass()
 {
 	int pos;
-	pos = searchVector("Class", specialHTMLNumber);
-	pos++; //add 1 for this blocks info
+	pos = searchVector("level", specialHTMLNumber);
+	pos++;
 	return cleanLine(pos);
 }
 
 string fileSearch::getComponents()
 {
 	int pos;
-	pos = searchVector("Components", specialHTMLNumber);
+	pos = searchVector("components", specialHTMLNumber);
 	pos++; //add 1 for this blocks info
 	return cleanLine(pos);
 }
@@ -140,7 +168,7 @@ string fileSearch::getComponents()
 string fileSearch::getCT()
 {
 	int pos;
-	pos = searchVector("Cast Time", specialHTMLNumber);
+	pos = searchVector("casting time", specialHTMLNumber);
 	pos++; //add 1 for this blocks info
 	return cleanLine(pos);
 }
@@ -148,7 +176,7 @@ string fileSearch::getCT()
 string fileSearch::getRange()
 {
 	int pos;
-	pos = searchVector("Range", specialHTMLNumber);
+	pos = searchVector("range", specialHTMLNumber);
 	pos++; //add 1 for this blocks info
 	return cleanLine(pos);
 }
@@ -156,7 +184,7 @@ string fileSearch::getRange()
 string fileSearch::getArea()
 {
 	int pos;
-	pos = searchVector("Area", specialHTMLNumber);
+	pos = searchVector("area", specialHTMLNumber);
 	pos++; //add 1 for this blocks info
 	return cleanLine(pos);
 }
@@ -164,7 +192,7 @@ string fileSearch::getArea()
 string fileSearch::getDuration()
 {
 	int pos;
-	pos = searchVector("Duration", specialHTMLNumber);
+	pos = searchVector("duration", specialHTMLNumber);
 	pos++; //add 1 for this blocks info
 	return cleanLine(pos);
 }
@@ -172,7 +200,7 @@ string fileSearch::getDuration()
 string fileSearch::getSaving()
 {
 	int pos;
-	pos = searchVector("Class", specialHTMLNumber);
+	pos = searchVector("saving throw", specialHTMLNumber);
 	pos++; //add 1 for this blocks info
 	return cleanLine(pos);
 }
@@ -180,9 +208,52 @@ string fileSearch::getSaving()
 string fileSearch::getResist() 
 {
 	int pos;
-	pos = searchVector("Spell Resistance", specialHTMLNumber);
+	pos = searchVector("spell resistance", specialHTMLNumber);
 	pos++; //add 1 for this blocks info
 	return cleanLine(pos);
+}
+
+string fileSearch::cleanDescription(int pos)
+{
+	string myString;
+	string buffer = htmlSource[pos];
+	//Special Cleaning Rules
+	for (int i = 0; buffer[i] != NULL; i++)
+	{
+		//if we find an html tag we ignore (pass around)
+		if (buffer[i] == '<')
+		{
+			while (buffer[i] != '>' && i < buffer.size())
+				i++;
+			i++;
+		}
+
+		//if there is a dice roll we add roll20 rollers
+		if ((buffer[i] >= '1' && buffer[i] <= '9') && buffer[i + 1] == 'd')
+		{
+			myString = myString + "[[";
+			for (int j = i; buffer[j] >= '1' && buffer[j] <= '9' || buffer[j] == 'd' || buffer[j] == '+'; j++)
+			{
+				myString = myString + buffer[j];
+				i = j;
+			}
+			myString = myString + "]]";
+
+		}
+		else
+			myString = myString + buffer[i];
+	}
+
+	return myString;
+}
+
+string fileSearch::getDescrip()
+{
+	int pos;
+	pos = searchVector("</table>", specialHTMLNumber);
+	pos += 2;
+
+	return cleanDescription(pos);
 }
 
 fileSearch::~fileSearch()

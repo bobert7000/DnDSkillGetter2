@@ -13,7 +13,7 @@ class fileSearch
 public:
 	//Constructors
 	fileSearch(); //default
-	fileSearch(char* filename, map<char*, string> skillInfo); //HTML source code of skill
+	fileSearch(char* filename, map<char*, string>& skillInfo); //HTML source code of skill
 
 	string getName(char* skillName);
 	string getClass();
@@ -24,6 +24,7 @@ public:
 	string getDuration();
 	string getSaving();
 	string getResist();
+	string getDescrip();
 
 	//Deconstructor
 	~fileSearch();
@@ -32,7 +33,8 @@ public:
 protected:
 	int searchVector(char* token, int pos = 0);
 	string cleanLine(int pos);
-	vector<char*> htmlSource;
+	string cleanDescription(int pos);
+	vector<string> htmlSource;
 	int specialHTMLNumber = 70; //since info we want begins here we will begin here (for now)
 	const int maxLine = 1024;
 };

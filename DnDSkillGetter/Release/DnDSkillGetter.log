@@ -1,4 +1,15 @@
 ﻿  fileSearch.cpp
-fileSearch.cpp(27): error C3861: 'organizeVector': identifier not found
-fileSearch.cpp(47): error C3861: 'partitionVector': identifier not found
-fileSearch.cpp(67): error C2660: 'std::swap': function does not take 3 arguments
+fileSearch.cpp(95): warning C4018: '<': signed/unsigned mismatch
+fileSearch.cpp(96): warning C4244: '=': conversion from 'wint_t' to 'char', possible loss of data
+fileSearch.cpp(98): warning C4018: '<': signed/unsigned mismatch
+fileSearch.cpp(103): warning C4018: '<': signed/unsigned mismatch
+fileSearch.cpp(104): warning C4244: '=': conversion from 'wint_t' to 'char', possible loss of data
+fileSearch.cpp(133): warning C4018: '<': signed/unsigned mismatch
+fileSearch.cpp(226): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  10 of 495 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  DnDSkillGetter.vcxproj -> C:\Users\Bobert\Documents\Visual Studio 2015\Projects\DnDSkillGetter\Release\DnDSkillGetter.exe
+  DnDSkillGetter.vcxproj -> C:\Users\Bobert\Documents\Visual Studio 2015\Projects\DnDSkillGetter\Release\DnDSkillGetter.pdb (Full PDB)

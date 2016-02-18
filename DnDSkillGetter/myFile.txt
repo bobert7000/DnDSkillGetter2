@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Fear :: d20srd.org</title>
+	<title>Fireball :: d20srd.org</title>
 	<link href="/styles/spells.css" type="text/css" rel="stylesheet" />
 	<script type="text/javascript" src="/scripts/diceRoller.js"></script>
 	<script type="text/javascript" src="/scripts/scrollingLinks.js"></script>
@@ -42,7 +42,7 @@
     </script>
     <gcse:searchbox-only></gcse:searchbox-only>
   </div>
-	<div id="path"><a href="/index.htm">Home</a> &gt; <a href="/indexes/spells.htm">Spells</a> &gt; <a href="#">Fear</a></div>
+	<div id="path"><a href="/index.htm">Home</a> &gt; <a href="/indexes/spells.htm">Spells</a> &gt; <a href="#">Fireball</a></div>
 	<ul id="rollovermenu">
 		<li id="hd20srdMenu"><a href="/index.htm" style="padding-right:5px"><img src="/images/menu_hd20srd.png" alt="Hypertext d20 SRD menu icon" width="23" height="20" /></a>
 			<ul>
@@ -74,12 +74,12 @@
 	</ul>
 </div>
 
-<h1>Fear</h1>
-<h4><a href="/srd/magicOverview/spellDescriptions.htm#necromancy">Necromancy</a> [<a href="/srd/magicOverview/spellDescriptions.htm#descriptor">Fear, Mind-Affecting</a>]</h4>
+<h1>Fireball</h1>
+<h4><a href="/srd/magicOverview/spellDescriptions.htm#evocation">Evocation</a> [<a href="/srd/magicOverview/spellDescriptions.htm#descriptor">Fire</a>]</h4>
 <table class="statBlock" cellspacing="0">
 	<tr>
 		<th><a href="/srd/magicOverview/spellDescriptions.htm#level">Level</a>:</th>
-		<td><a href="/srd/spellLists/bardSpells.htm#thirdLevelBardSpells">Brd 3</a>, <a href="/srd/spellLists/sorcererWizardSpells.htm#fourthLevelSorcererWizardSpells">Sor/Wiz 4</a></td>
+		<td><a href="/srd/spellLists/sorcererWizardSpells.htm#thirdLevelSorcererWizardSpells">Sor/Wiz 3</a></td>
 	</tr>
 	<tr>
 		<th><a href="/srd/magicOverview/spellDescriptions.htm#components">Components</a>:</th>
@@ -91,19 +91,19 @@
 	</tr>
 	<tr>
 		<th><a href="/srd/magicOverview/spellDescriptions.htm#range">Range</a>:</th>
-		<td>30 ft.</td>
+		<td>Long (400 ft. + 40 ft./level)</td>
 	</tr>
 	<tr>
 		<th><a href="/srd/magicOverview/spellDescriptions.htm#area">Area</a>:</th>
-		<td>Cone-shaped burst</td>
+		<td>20-ft.-radius spread</td>
 	</tr>
 	<tr>
 		<th><a href="/srd/magicOverview/spellDescriptions.htm#duration">Duration</a>:</th>
-		<td>1 round/level or 1 round; see text</td>
+		<td>Instantaneous</td>
 	</tr>
 	<tr>
 		<th><a href="/srd/magicOverview/spellDescriptions.htm#savingThrow">Saving Throw</a>:</th>
-		<td>Will partial</td>
+		<td>Reflex half</td>
 	</tr>
 	<tr>
 		<th><a href="/srd/magicOverview/spellDescriptions.htm#spellResistance">Spell Resistance</a>:</th>
@@ -111,12 +111,18 @@
 	</tr>
 </table>
 <p>
-	An invisible cone of terror causes each living creature in the area to become <a href="/srd/conditionSummary.htm#panicked">panicked</a> unless it succeeds on a <a href="/srd/combat/combatStatistics.htm#will">Will save</a>. If cornered, a panicked creature begins <a href="/srd/conditionSummary.htm#cowering">cowering</a>. If the Will save succeeds, the creature is <a href="/srd/conditionSummary.htm#shaken">shaken</a> for 1 round.
+	A fireball spell is an explosion of flame that detonates with a low roar and deals <a href="javascript:void(0);" class="diceRoller" onclick="rollValue('Total','1d6');" title="Roll the dice!">1d6</a> points of fire damage per caster level (maximum <a href="javascript:void(0);" class="diceRoller" onclick="rollValue('Total','10d6');" title="Roll the dice!">10d6</a>) to every creature within the area. Unattended objects also take this damage. The explosion creates almost no pressure.
+</p>
+<p>
+	You point your finger and determine the range (distance and height) at which the fireball is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged <a href="/srd/combat/combatStatistics.htm#touchAttacks">touch attack</a>, or else the bead strikes the barrier and detonates prematurely.
+</p>
+<p>
+	The fireball sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the fireball may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.
 </p>
 
 <h6>Material Component</h6>
 <p>
-	Either the heart of a hen or a white feather.
+	A tiny ball of bat guano and sulfur.
 </p>
 
 <div class="footer">

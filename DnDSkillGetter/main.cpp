@@ -7,6 +7,8 @@
 #include <fstream>
 using namespace std;
 
+#include "skills.h"
+#include "macroMaker.h"
 #include <curl.h>
 
 //Function dumps a character array in a file
@@ -54,12 +56,38 @@ void htmlGrab(string myURL)
 void main()
 {
 	string myURL = "http://www.d20srd.org/srd/spells/";
-	string skillName;
+	char skillName[256];
+	char characterName[32];
 	cout << "Skill Name: ";
-	cin >> skillName;
-	myURL = myURL + skillName + ".htm";
+	cin.getline(skillName,256);
+	cout << "Character Name: ";
+	cin >> characterName;
+
+
+	//Make a good url
+	for (int i = 0; skillName[i] != NULL; i++)
+	{
+		if (skillName[i] >= 'A' && skillName[i] <= 'Z' && i == 0)
+			skillName[i] = towlower(skillName[i]);
+
+		if (skillName[i] != ' ')
+			myURL = myURL + skillName[i];
+		else
+		{
+			i++;
+			if (skillName[i] >= 'a' && skillName[i] <= 'z')
+				skillName[i] = towupper(skillName[i]);
+			myURL = myURL + skillName[i];
+		}
+	}
+
+
+	myURL = myURL + ".htm";
 
 	htmlGrab(myURL);
+
+	skills mySkill(skillName,characterName);
+	macroMaker myMacro(mySkill, characterName);
 
 	system("pause");
 }

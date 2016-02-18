@@ -5,19 +5,27 @@
 #include "fileSearch.h"
 using namespace std;
 #include "skills.h"
+#include "macroMaker.h"
 
 skills::skills()
 {
 }
 
-skills::skills(char *skillName)
+skills::skills(char *skillName, char *characterName)
 {
 	fileSearch(skillName, skillInfo);
+	string characterStr = characterName;
+	skillInfo["Name"] = characterStr;
 }
 
 string skills::getName()
 {
 	return skillInfo["Name"];
+}
+
+string skills::getSkillName()
+{
+	return skillInfo["SkillName"];
 }
 
 string skills::getClass()
@@ -58,6 +66,11 @@ string skills::getSaving()
 string skills::getResist()
 {
 	return skillInfo["Resist"];
+}
+
+string skills::getDescription()
+{
+	return skillInfo["Description"];
 }
 
 skills::~skills()

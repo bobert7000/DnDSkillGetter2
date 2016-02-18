@@ -3,7 +3,9 @@
 // Written by Robert Comegna
 // stores/manipulates skills data
 
+
 #include <string>
+#include <map>
 using namespace std;
 
 class skills
@@ -11,12 +13,13 @@ class skills
 public:
 	//Constructors
 	skills(); //default
-	skills(char *skillName); //HTML source code of skill
+	skills(char *skillName,char *characterName); //HTML source code of skill
 
 	//Class functions 
-	string findString(char *myChar); //NOTE: consider change/reclass for this function
+	//string findString(char *myChar); //NOTE: consider change/reclass for this function
 	//Functions that Extrapolates skill info from source code
 	string getName();
+	string getSkillName();
 	string getClass();
 	string getComponents();
 	string getCT();
@@ -25,6 +28,7 @@ public:
 	string getDuration();
 	string getSaving();
 	string getResist();
+	string getDescription();
 
 	//Deconstructor
 	~skills();
